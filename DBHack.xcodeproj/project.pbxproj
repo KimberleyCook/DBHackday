@@ -14,6 +14,7 @@
 		FCA8C3C91A72F36300C96B10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA8C3C81A72F36300C96B10 /* Images.xcassets */; };
 		FCA8C3CC1A72F36300C96B10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA8C3CA1A72F36300C96B10 /* LaunchScreen.xib */; };
 		FCA8C3D81A72F36300C96B10 /* DBHackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3D71A72F36300C96B10 /* DBHackTests.m */; };
+		FCA8C3E71A72F7E300C96B10 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3E61A72F7E300C96B10 /* CustomButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		FCA8C3D11A72F36300C96B10 /* DBHackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DBHackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA8C3D61A72F36300C96B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA8C3D71A72F36300C96B10 /* DBHackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBHackTests.m; sourceTree = "<group>"; };
+		FCA8C3E51A72F7E300C96B10 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		FCA8C3E61A72F7E300C96B10 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 				FCA8C3C51A72F36300C96B10 /* Main.storyboard */,
 				FCA8C3C81A72F36300C96B10 /* Images.xcassets */,
 				FCA8C3CA1A72F36300C96B10 /* LaunchScreen.xib */,
+				FCA8C3E41A72F5CB00C96B10 /* Subclasses */,
 				FCA8C3BB1A72F36300C96B10 /* Supporting Files */,
 			);
 			path = DBHack;
@@ -117,6 +121,15 @@
 				FCA8C3D61A72F36300C96B10 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCA8C3E41A72F5CB00C96B10 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				FCA8C3E51A72F7E300C96B10 /* CustomButton.h */,
+				FCA8C3E61A72F7E300C96B10 /* CustomButton.m */,
+			);
+			name = Subclasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA8C3E71A72F7E300C96B10 /* CustomButton.m in Sources */,
 				FCA8C3C41A72F36300C96B10 /* ViewController.m in Sources */,
 				FCA8C3C11A72F36300C96B10 /* AppDelegate.m in Sources */,
 				FCA8C3BE1A72F36300C96B10 /* main.m in Sources */,
