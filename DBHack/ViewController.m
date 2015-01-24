@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CustomButton.h"
+#import "NewImageViewController.h"
 
 @interface ViewController ()
 
@@ -21,10 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"selfie.jpg"]];
-
-    
     self.photoImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    self.photoImageView.image = [UIImage imageNamed:@"selfie.jpg"];
     [self.view addSubview:self.photoImageView];
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -60,10 +59,10 @@
         yIncrement +=40;
     }
     
-    UIButton *saveButton = [[UIButton alloc] initWithFrame:CGRectMake(400, 20, 100, 40)];
+    UIButton *saveButton = [[UIButton alloc] initWithFrame:CGRectMake(400, 100, 100, 40)];
     [saveButton setTitle:@"Save me" forState:UIControlStateNormal];
     [saveButton setBackgroundColor:[UIColor redColor]];
-    [saveButton addTarget:self action:@selector(saveImage:) forControlEvents:UIControlEventTouchUpInside];
+    [saveButton addTarget:self action:@selector(saveImage) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:saveButton];
 
@@ -79,8 +78,13 @@
     self.brushWidth = [NSNumber numberWithFloat:CGRectGetWidth(button.frame)];
 }
 
--(void)saveImage:(UIButton *)saveButton
+-(void)saveImage
 {
+    UIImage *newImage = self.photoImageView.image;
+    
+    NewImageViewController *newImageController = [[NewImageViewController alloc] init];
+    newImageController.photoImage = newImage;
+    [self.navigationController pushViewController:newImageController animated:YES];
     
 }
 
