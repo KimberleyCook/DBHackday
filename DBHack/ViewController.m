@@ -12,6 +12,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) UIColor *selectedColor;
+@property (nonatomic, strong) NSNumber *brushWidth;
 
 @end
 
@@ -20,15 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"selfie.jpg"]];
+
+    
     self.photoImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:self.photoImageView];
     
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSArray *colors = @[ [UIColor blackColor], [UIColor grayColor], [UIColor brownColor], [UIColor orangeColor], [UIColor redColor], [UIColor blueColor], [UIColor purpleColor], [UIColor greenColor]];
+    NSArray *colors = @[ [UIColor blackColor], [UIColor whiteColor], [UIColor grayColor], [UIColor brownColor], [UIColor orangeColor], [UIColor blueColor], [UIColor redColor], [UIColor magentaColor], [UIColor purpleColor], [UIColor yellowColor], [UIColor greenColor]];
     
-    int xPosition = 20;
-    int yIncrement = 125;
+    NSArray *brushWidths = @[@10.0f, @15.0f, @20.0f];
+    
+    int xColourPosition = 20; //left
+    int xBrushPosition = 725; //left
+    int yIncrement = 125; //top
     int width = 30;
     int height = 30;
     
@@ -36,18 +43,45 @@
         CustomButton *button = [CustomButton buttonWithType:UIButtonTypeCustom];
         [button setBackgroundColor:color];
         button.layer.cornerRadius = 25;
-        [button setFrame:CGRectMake(xPosition, yIncrement, width, height)];
+        [button setFrame:CGRectMake(xColourPosition, yIncrement, width, height)];
         [button addTarget:self action:@selector(pressButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         
         yIncrement += 40;
     }
 
+    for (NSNumber *brushWidth in brushWidths) {
+        CustomButton *button = [CustomButton buttonWithType:UIButtonTypeCustom];
+        [button setBackgroundColor:[UIColor blackColor]];
+        [button setFrame:CGRectMake(xBrushPosition, yIncrement, [brushWidth floatValue], [brushWidth floatValue])];
+        [button addTarget:self action:@selector(widthButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        
+        yIncrement +=40;
+    }
+    
+    UIButton *saveButton = [[UIButton alloc] initWithFrame:CGRectMake(400, 20, 100, 40)];
+    [saveButton setTitle:@"Save me" forState:UIControlStateNormal];
+    [saveButton setBackgroundColor:[UIColor redColor]];
+    [saveButton addTarget:self action:@selector(saveImage:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:saveButton];
+
 }
 
 -(void)pressButton:(UIButton *)button
 {
     self.selectedColor = button.backgroundColor;
+}
+
+-(void)widthButtonPressed:(UIButton *)button
+{
+    self.brushWidth = [NSNumber numberWithFloat:CGRectGetWidth(button.frame)];
+}
+
+-(void)saveImage:(UIButton *)saveButton
+{
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -65,7 +99,7 @@
     
     CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
     CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeCopy);
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 10.0f);
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), [self.brushWidth floatValue]);
     CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), self.selectedColor.CGColor);
     
     CGContextBeginPath(UIGraphicsGetCurrentContext());

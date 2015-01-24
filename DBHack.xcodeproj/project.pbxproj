@@ -15,6 +15,7 @@
 		FCA8C3CC1A72F36300C96B10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA8C3CA1A72F36300C96B10 /* LaunchScreen.xib */; };
 		FCA8C3D81A72F36300C96B10 /* DBHackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3D71A72F36300C96B10 /* DBHackTests.m */; };
 		FCA8C3E71A72F7E300C96B10 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA8C3E61A72F7E300C96B10 /* CustomButton.m */; };
+		FCA8C3E91A73B5C800C96B10 /* selfie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FCA8C3E81A73B5C800C96B10 /* selfie.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		FCA8C3D71A72F36300C96B10 /* DBHackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBHackTests.m; sourceTree = "<group>"; };
 		FCA8C3E51A72F7E300C96B10 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		FCA8C3E61A72F7E300C96B10 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		FCA8C3E81A73B5C800C96B10 /* selfie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = selfie.jpg; path = ../../../Desktop/selfie.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				FCA8C3C01A72F36300C96B10 /* AppDelegate.m */,
 				FCA8C3C21A72F36300C96B10 /* ViewController.h */,
 				FCA8C3C31A72F36300C96B10 /* ViewController.m */,
+				FCA8C3E81A73B5C800C96B10 /* selfie.jpg */,
 				FCA8C3C51A72F36300C96B10 /* Main.storyboard */,
 				FCA8C3C81A72F36300C96B10 /* Images.xcassets */,
 				FCA8C3CA1A72F36300C96B10 /* LaunchScreen.xib */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA8C3C71A72F36300C96B10 /* Main.storyboard in Resources */,
+				FCA8C3E91A73B5C800C96B10 /* selfie.jpg in Resources */,
 				FCA8C3CC1A72F36300C96B10 /* LaunchScreen.xib in Resources */,
 				FCA8C3C91A72F36300C96B10 /* Images.xcassets in Resources */,
 			);

@@ -15,7 +15,6 @@
     if (self = [super initWithFrame:frame]) {
         [[self layer] setBorderWidth:2.0f];
         [[self layer] setBorderColor:[UIColor whiteColor].CGColor];
-        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
     return self;
 }

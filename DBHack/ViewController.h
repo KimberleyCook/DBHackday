@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, strong) UIButton *btn;
+@property (nonatomic, strong) UIButton *saveButton;
 @property (nonatomic, strong) UIImageView *photoImageView;
 @property (nonatomic) CGPoint lastDraggedPoint;
 
